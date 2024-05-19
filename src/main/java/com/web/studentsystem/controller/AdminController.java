@@ -53,7 +53,7 @@ public class AdminController {
 //                    "Tài khoản của bạn: USERNAME:"+ student.getEmail() + " PASSWORD: " + student.getMSV() + ".\nHãy truy cập hệ thống để đổi mật khẩu và cập nhật " +
 //                            "các thông tin cần thiết");
             return ResponseEntity.ok(student);
-            } else return ResponseEntity.notFound().build();
+        } else return ResponseEntity.notFound().build();
 //        return null;
     }
     //UPDATE CONTROLLER
