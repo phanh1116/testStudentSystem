@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -48,5 +49,9 @@ public class StudentsystemApplication implements CommandLineRunner {
 			user.setPassword(new BCryptPasswordEncoder().encode("2002001"));
 			userRepo.save(user);
 		}
+	}
+
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/").setViewName("index.html");
 	}
 }
